@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 feature ['Home page'], js: true do
   scenario 'Visit home page' do
     visit root_path
