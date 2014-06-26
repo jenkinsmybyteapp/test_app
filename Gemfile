@@ -30,10 +30,8 @@ gem 'mysql2'
 gem 'slim-rails'
 gem 'bootstrap-sass', '~> 3.1.1'
 
-group :development, :test do
-  gem 'rspec-rails'
-  gem 'thin'
-  gem 'factory_girl_rails'
+group :test do
+  gem 'rspec-rails', :group => :development
 end
 
 group :development do
@@ -41,11 +39,13 @@ group :development do
   gem 'pry-nav'
   gem 'pry-doc'
   gem 'quiet_assets'
+  gem 'thin'
 end
 
 group :test do
   gem 'capybara'
   gem 'capybara-webkit'
+  gem 'factory_girl_rails'
 end
 
 # Use ActiveModel has_secure_password
