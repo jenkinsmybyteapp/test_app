@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature ['Home page'], js: true do
-  backround do
+  background do
     visit root_path
   end
 
