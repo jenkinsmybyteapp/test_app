@@ -20,7 +20,7 @@ feature ['Home page'], js: true do
     scenario 'with empty body' do
       click_button 'Create Ticket'
       wait_for_ajax
-      expect(page).to have_content('Error! Please fill in some ticket text')
+      expect(page).to have_content('The following errors prevent your ticket submission')
     end
   end
 end
