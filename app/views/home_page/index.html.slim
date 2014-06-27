@@ -1,1 +1,8 @@
-h1 Welcome to HelpDesc System!
+h3 Welcome to HelpDesk System!
+p Please, submit your issue
+.issue-form
+  = form_for @ticket, remote: true do |f|
+    .form-group
+      = f.label :body, 'Issue'
+      = f.text_area :body, cols: 30, rows: 10, :placeholder => 'Describe your issue', :class => 'form-control'
+    = f.submit
