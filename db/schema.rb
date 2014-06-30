@@ -11,18 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140630132825) do
+ActiveRecord::Schema.define(version: 20140630211844) do
+
+  create_table "screenshots", force: true do |t|
+    t.integer  "tickets_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
 
   create_table "tickets", force: true do |t|
     t.text     "body"
-    t.string   "reference",               limit: 15
-    t.string   "status",                  limit: 30
+    t.string   "reference",  limit: 15
+    t.string   "status",     limit: 30
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "screenshot_file_name"
-    t.string   "screenshot_content_type"
-    t.integer  "screenshot_file_size"
-    t.datetime "screenshot_updated_at"
   end
 
 end

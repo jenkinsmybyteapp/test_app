@@ -1,8 +1,9 @@
 class Ticket < ActiveRecord::Base
   validates :body, presence: true
   before_create :generate_reference
-  has_attached_file :screenshot, :styles => { thumb: '100x100' }
-  validates_attachment_content_type :screenshot, :content_type => /\Aimage\/.*\Z/
+  has_many :screenshots
+
+  accepts_nested_attributes_for :screenshots
 
   private
   def generate_reference

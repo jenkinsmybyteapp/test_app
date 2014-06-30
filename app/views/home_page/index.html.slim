@@ -6,6 +6,7 @@ p Please, submit your issue
       = f.label :body, 'Issue'
       = f.text_area :body, cols: 30, rows: 10, :placeholder => 'Describe your issue', :class => 'form-control'
     .form-group
-      = f.label :screenshot, 'Upload screenshots'
-      = f.file_field :screenshot, multiple: true, id: 'fileupload'
+      = f.fields_for :screenshot do |builder|
+        = builder.label :image, 'Upload screenshots'
+        = builder.file_field :image, multiple: true, id: 'fileupload'
     = f.submit
