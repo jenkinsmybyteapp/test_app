@@ -29,7 +29,8 @@ gem 'spring',        group: :development
 gem 'mysql2'
 gem 'slim-rails'
 gem 'bootstrap-sass', '~> 3.1.1'
-gem "paperclip", "~> 4.1"
+gem 'paperclip', '~> 4.1'
+gem 'jquery-fileupload-rails'
 
 group :test do
   gem 'rspec-rails', :group => :development
