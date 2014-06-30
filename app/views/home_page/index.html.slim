@@ -1,11 +1,11 @@
 h3 Welcome to HelpDesk System!
 p Please, submit your issue
 .issue-form
-  = form_for @ticket, multipart: true, remote: true, authenticity_token: true do |f|
+  = form_for @ticket, remote: true, authenticity_token: true, multipart: true do |f|
     .form-group
       = f.label :body, 'Issue'
       = f.text_area :body, cols: 30, rows: 10, :placeholder => 'Describe your issue', :class => 'form-control'
     .form-group
       = f.label :screenshot, 'Upload screenshots'
-      = f.file_field :screenshot
+      = f.file_field :screenshot, multiple: true, id: 'fileupload'
     = f.submit
