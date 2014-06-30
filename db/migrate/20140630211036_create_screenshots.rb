@@ -1,7 +1,7 @@
 class CreateScreenshots < ActiveRecord::Migration
   def up
     create_table :screenshots do |t|
-      t.references :tickets
+      t.references :ticket
       t.timestamps
     end
     add_attachment :screenshots, :image

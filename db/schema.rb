@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20140630211844) do
 
   create_table "screenshots", force: true do |t|
-    t.integer  "tickets_id"
+    t.integer  "ticket_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "image_file_name"
