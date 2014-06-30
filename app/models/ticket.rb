@@ -3,8 +3,6 @@ class Ticket < ActiveRecord::Base
   before_create :generate_reference
   has_many :screenshots
 
-  accepts_nested_attributes_for :screenshots
-
   private
   def generate_reference
     reference = random_str('A'..'Z') + random_str('0'..'9') +
