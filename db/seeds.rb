@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+DEPARTMENTS = ['Computer Science', 'Nature', 'Other']
+
+puts 'Creating default Departments'
+DEPARTMENTS.each do |department|
+  Department.create(name: department)
+end

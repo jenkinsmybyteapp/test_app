@@ -1,7 +1,7 @@
 class Ticket < ActiveRecord::Base
   before_create :generate_reference
   has_many :screenshots
-  has_one :department
+  belongs_to :department
 
   validates :body, presence: true
   validates :email, presence: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
