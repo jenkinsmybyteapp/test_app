@@ -1,3 +1,7 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+# Simple way to prevent robots from spamming
+# It's very primitive and you should use somethng more serious in production
+# For futher details see https://github.com/subwindow/negative-captcha
+
+$ ->
+  $('.issue-form form').submit ->
+    return false unless $(@).find('input#honeypot').val() is ''

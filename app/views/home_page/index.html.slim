@@ -2,9 +2,10 @@ h3 Welcome to HelpDesk System!
 p Please, submit your issue
 .issue-form
   = form_for @ticket, remote: true, authenticity_token: true, multipart: true do |f|
+
     .form-group
       = f.label :body, 'Issue'
-      = f.text_area :body, cols: 30, rows: 10, :placeholder => 'Describe your issue', :class => 'form-control'
+      = f.text_area :body, cols: 30, rows: 10, placeholder: 'Describe your issue', class: 'form-control'
     .form-group
       .row
         .col-md-1= f.label :email, 'Email'
@@ -12,8 +13,9 @@ p Please, submit your issue
     .from-group
       .row
         .col-md-1= f.label :department, 'Department'
-        .col-md-11= f.collection_select(:department_id, @departments, :id, :name, :include_blank => "Please select")
+        .col-md-11= f.collection_select(:department_id, @departments, :id, :name, include_blank: "Please select")
     .form-group
       = f.label :screenshots, 'Upload screenshots'
       = f.file_field :screenshots, multiple: true, id: 'fileupload'
+    .honeypot= text_field_tag :honeypot
     = f.submit
