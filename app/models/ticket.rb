@@ -1,4 +1,5 @@
 class Ticket < ActiveRecord::Base
+  before_validation :add_default_status
   before_create :generate_reference
   has_many :screenshots
   belongs_to :department
@@ -8,6 +9,8 @@ class Ticket < ActiveRecord::Base
   validates :email, presence: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
   validates :department, presence: true
   validates :status, presence: true
+
+  DEFAULT_STATUS = 'Waiting for Staff Response'
 
   def to_param
     reference
@@ -25,5 +28,9 @@ class Ticket < ActiveRecord::Base
     return '' if length < 1 || range.count < length
 
     range.to_a.shuffle[0, length].join()
+  end
+
+  def add_default_status
+    self.status = Status.where(name: DEFAULT_STATUS ).first
   end
 end
