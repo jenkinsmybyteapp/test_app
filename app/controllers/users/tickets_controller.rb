@@ -15,6 +15,14 @@ class Users::TicketsController < ApplicationController
     end
   end
 
+  def show
+    @ticket = Ticket.where(:reference => params[:id]).first
+    unless @ticket
+      flash[:error] = 'Ticket not found'
+      redirect_to root_url
+    end
+  end
+
   private
 
   def ticket_params
