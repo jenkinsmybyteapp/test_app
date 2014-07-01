@@ -10,7 +10,7 @@ class Users::TicketsController < ApplicationController
       render 'create_success'
     else
       flash.now[:error] = %Q{The following errors prevent your ticket submission:
-                             #{@ticket.errors.full_messages.join('<br/>')}}
+                             #{@ticket.errors.full_messages.to_sentence}}
 
       render 'create_error'
     end
