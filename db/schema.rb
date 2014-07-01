@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140701084438) do
+ActiveRecord::Schema.define(version: 20140701105740) do
 
   create_table "screenshots", force: true do |t|
     t.integer  "ticket_id"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20140701084438) do
     t.string   "status",     limit: 30
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "email"
   end
 
 end

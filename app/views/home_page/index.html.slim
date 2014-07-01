@@ -6,6 +6,10 @@ p Please, submit your issue
       = f.label :body, 'Issue'
       = f.text_area :body, cols: 30, rows: 10, :placeholder => 'Describe your issue', :class => 'form-control'
     .form-group
+      .row
+        .col-md-1= f.label :email, 'Email'
+        .col-md-11= f.text_field :email
+    .form-group
       = f.label :screenshots, 'Upload screenshots'
       = f.file_field :screenshots, multiple: true, id: 'fileupload'
     = f.submit

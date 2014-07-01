@@ -1,7 +1,9 @@
 class Ticket < ActiveRecord::Base
-  validates :body, presence: true
   before_create :generate_reference
   has_many :screenshots
+
+  validates :body, presence: true
+  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
 
   def to_param
     reference

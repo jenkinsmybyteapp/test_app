@@ -5,6 +5,7 @@ class Users::TicketsController < ApplicationController
     @ticket = Ticket.new(ticket_params)
     build_screenshot(@ticket)
     if @ticket.save
+      UserMailer.new_ticket(@ticket).deliver
       flash[:success] = 'Your ticket has been successfully submitted'
       render 'create_success'
     else
@@ -26,7 +27,7 @@ class Users::TicketsController < ApplicationController
   private
 
   def ticket_params
-      params.require(:ticket).permit(:body, :screenshots)
+      params.require(:ticket).permit(:body, :screenshots, :email)
   end
 
   def build_screenshot(ticket)
