@@ -4,4 +4,6 @@ html
     meta content='text/html; charset=UTF-8' http-equiv='Content-Type'
   body
     h3 You have a new ticket
-    p To view, please visti this url: #{tickets_url(@ticket)}
+    p
+      ' To view, please visit this url:
+      = link_to 'ticket', ticket_url(@ticket)
