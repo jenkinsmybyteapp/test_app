@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140701105740) do
+ActiveRecord::Schema.define(version: 20140701114319) do
+
+  create_table "departments", force: true do |t|
+    t.string   "name"
+    t.integer  "ticket_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "screenshots", force: true do |t|
     t.integer  "ticket_id"
