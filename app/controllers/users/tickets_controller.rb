@@ -27,7 +27,7 @@ class Users::TicketsController < ApplicationController
   private
 
   def ticket_params
-      params.require(:ticket).permit(:body, :screenshots, :email)
+      params.require(:ticket).permit(:body, :screenshots, :email, :department_id)
   end
 
   def build_screenshot(ticket)

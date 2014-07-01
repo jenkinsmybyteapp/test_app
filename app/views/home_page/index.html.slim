@@ -9,6 +9,10 @@ p Please, submit your issue
       .row
         .col-md-1= f.label :email, 'Email'
         .col-md-11= f.text_field :email
+    .from-group
+      .row
+        .col-md-1= f.label :department, 'Department'
+        .col-md-11= f.collection_select(:department_id, @departments, :id, :name, :include_blank => "Please select")
     .form-group
       = f.label :screenshots, 'Upload screenshots'
       = f.file_field :screenshots, multiple: true, id: 'fileupload'

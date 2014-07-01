@@ -5,6 +5,7 @@ class Ticket < ActiveRecord::Base
 
   validates :body, presence: true
   validates :email, presence: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
+  validates :department, presence: true
 
   def to_param
     reference
