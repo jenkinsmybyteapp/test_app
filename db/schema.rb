@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140630211844) do
+ActiveRecord::Schema.define(version: 20140701084438) do
 
   create_table "screenshots", force: true do |t|
     t.integer  "ticket_id"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20140630211844) do
 
   create_table "tickets", force: true do |t|
     t.text     "body"
-    t.string   "reference",  limit: 15
+    t.string   "reference",  limit: 20
     t.string   "status",     limit: 30
     t.datetime "created_at"
     t.datetime "updated_at"
