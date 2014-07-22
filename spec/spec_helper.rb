@@ -17,6 +17,8 @@
 require 'capybara/rspec'
 require 'capybara-webkit'
 require 'pry'
+require 'factory_girl'
+require 'factory_girl_rails'
 
 RSpec.configure do |config|
 # The settings below are suggested to provide a good initial experience
