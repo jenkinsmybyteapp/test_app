@@ -31,6 +31,7 @@ gem 'slim-rails'
 gem 'bootstrap-sass', '~> 3.1.1'
 gem 'paperclip', '~> 4.1'
 gem 'jquery-fileupload-rails'
+gem 'devise'
 
 group :test do
   gem 'rspec-rails', :group => :development
