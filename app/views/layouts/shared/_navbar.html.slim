@@ -2,4 +2,7 @@
   .navbar-header
     = link_to 'HELPDESK SYSTEM', root_path, class: 'navbar-brand'
   ul class='nav navbar-nav-inverse navbar-right'
-    li= link_to 'Sign In', '#'
+    - if user_signed_in?
+      li= link_to 'Sign Out', destroy_user_session_path, method: :delete
+    - else
+      li= link_to 'Sign In', new_user_session_path
