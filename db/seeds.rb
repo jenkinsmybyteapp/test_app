@@ -20,3 +20,12 @@ STATUSES.each do |status|
   Status.create(name: status)
 end
 
+STAFF = ["john@mail.com", "steve@mail.com", "bean@mail.com"]
+puts 'Creating default Staff members'
+puts "emails: #{STAFF.join(',')}"
+puts 'Default password is password'
+
+STAFF.each do |email|
+  User.create(email: email, password: 'password', password_confirmation: 'password')
+end
+
