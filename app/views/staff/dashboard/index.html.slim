@@ -1,1 +1,12 @@
 h3 TICKETS LIST
+
+ul.nav.nav-tabs#tabs role='tablist'
+  li.active= link_to 'Open', '#open', role: 'tab', data: {toggle: 'tab'}
+  li= link_to 'Hold', '#hold', role: 'tab', data: {toggle: 'tab'}
+  li= link_to 'Closed', '#closed', role: 'tab', data: {toggle: 'tab'}
+  li= link_to 'Search', '#search', role: 'tab', data: {toggle: 'tab'}
+#my-tab-content.tab-content
+  #open.tab-pane.active= render 'tickets_list', tickets: @open_tickets
+  #hold.tab-pane= render 'tickets_list', tickets: @hold_tickets
+  #closed.tab-pane= render 'tickets_list', tickets: @closed_tickets
+  #search.tab-pane
