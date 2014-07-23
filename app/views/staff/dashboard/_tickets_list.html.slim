@@ -6,6 +6,7 @@ table.table.table-striped
       th Department
       th Status
       th Email
+      th Staff
       th Set
       th Reply
   tbody
@@ -16,6 +17,7 @@ table.table.table-striped
         th= ticket.department.name
         th= ticket.status.name
         th= mail_to ticket.email
+        th= staff_assigned(ticket)
         th= link_to 'set', '#'
         th= link_to 'reply', '#'
 
