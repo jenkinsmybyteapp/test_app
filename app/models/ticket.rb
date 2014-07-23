@@ -11,6 +11,13 @@ class Ticket < ActiveRecord::Base
   validates :status, presence: true
 
   DEFAULT_STATUS = 'Waiting for Staff Response'
+  CLOSED_STATUSES = ['Cancelled', 'Completed']
+  OPEN_STATUSES = ['Waiting for Staff Response', 'Waiting for Customer']
+  HOLD_STATUSES = ['On Hold']
+
+  scope :closed, -> { joins(:status).where('statuses.name IN (?)', CLOSED_STATUSES) }
+  scope :open, -> { joins(:status).where('statuses.name IN (?)', OPEN_STATUSES) }
+  scope :hold, -> { joins(:status).where('statuses.name IN (?)', HOLD_STATUSES) }
 
   def to_param
     reference
