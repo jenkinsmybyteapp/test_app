@@ -1,0 +1,21 @@
+table.table.table-striped
+  thead
+    tr
+      th #
+      th Reference
+      th Department
+      th Status
+      th Email
+      th Set
+      th Reply
+  tbody
+    - tickets.each_with_index do |ticket, num|
+      tr
+        th= num + 1
+        th= ticket.reference
+        th= ticket.department.name
+        th= ticket.status.name
+        th= mail_to ticket.email
+        th= link_to 'set', '#'
+        th= link_to 'reply', '#'
+
