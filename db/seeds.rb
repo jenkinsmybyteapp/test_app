@@ -13,7 +13,7 @@ DEPARTMENTS.each do |department|
   Department.create(name: department)
 end
 
-STATUSES = ["Waiting for Staff Response", "Waiting for Customer", "On Hold", "Cancelled"]
+STATUSES = ["Waiting for Staff Response", "Waiting for Customer", "On Hold", "Cancelled", "Completed"]
 
 puts 'Creating default Statuses'
 STATUSES.each do |status|
