@@ -45,4 +45,14 @@ RSpec.configure do |config|
   config.include Features::Staff::SessionHelpers
 
   config.include FactoryGirl::Syntax::Methods
+
+  config.before do
+    DatabaseCleaner.strategy = :truncation
+    DatabaseCleaner.start
+    ActionMailer::Base.deliveries.clear
+  end
+
+  config.after do
+    DatabaseCleaner.clean
+  end
 end

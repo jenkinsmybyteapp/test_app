@@ -19,6 +19,7 @@ require 'capybara-webkit'
 require 'pry'
 require 'factory_girl'
 require 'factory_girl_rails'
+require 'database_cleaner'
 
 RSpec.configure do |config|
 # The settings below are suggested to provide a good initial experience
