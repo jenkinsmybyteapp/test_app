@@ -13,4 +13,10 @@ FactoryGirl.define do
   factory :status do
     name 'Waiting for Staff Response'
   end
+
+  factory :user do
+    sequence(:email) {|n| "user_#{n}@mail.com"}
+    password 'password'
+    password_confirmation { |u| u.password }
+  end
 end
