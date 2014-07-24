@@ -15,7 +15,7 @@ p Please, submit your issue
         .col-md-1= f.label :department, 'Department'
         .col-md-11= f.collection_select(:department_id, @departments, :id, :name, include_blank: "Please select")
     .form-group
-      = f.label :screenshots, 'Upload screenshots'
-      = f.file_field :screenshots, multiple: true, id: 'fileupload'
+      = f.label :screenshot, 'Upload screenshot'
+      = f.file_field :screenshot, id: 'fileupload'
     .honeypot= text_field_tag :honeypot
     = f.submit

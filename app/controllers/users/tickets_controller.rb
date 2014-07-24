@@ -27,12 +27,12 @@ class Users::TicketsController < ApplicationController
   private
 
   def ticket_params
-      params.require(:ticket).permit(:body, :screenshots, :email, :department_id)
+      params.require(:ticket).permit(:body, :email, :department_id)
   end
 
   def build_screenshot(ticket)
-    if params[:ticket][:screenshots]
-      ticket.screenshots.build(image: params[:ticket][:screenshots].first)
+    if params[:ticket][:screenshot]
+      ticket.build_screenshot(image: params[:ticket][:screenshot])
     end
   end
 end

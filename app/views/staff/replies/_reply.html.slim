@@ -6,7 +6,11 @@
           = "&times".html_safe
         h4.modal-title Reply to user
       .modal-body
-        | This is Body
+        = form_for ticket, url: ticket_replies_path(ticket), method: :post, remote: true do |f|
+          .ticket-body
+            .header Ticket content
+            .body= f.object.body
+            .image=link_to image_tag(f.object.screenshot.image.url(:thumb)), f.object.screenshot.image.url(:original)
       .modal-footer
         button.btn.btn-default type='button' data-dismiss='modal' Cancel
         button.btn.btn-success.modal-form-submit type='button' Send

@@ -1,7 +1,7 @@
 class Ticket < ActiveRecord::Base
   before_validation :add_default_status
   before_create :generate_reference
-  has_many :screenshots
+  has_one :screenshot
   belongs_to :department
   belongs_to :status
   belongs_to :user
