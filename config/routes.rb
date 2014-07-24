@@ -9,6 +9,9 @@ Rails.application.routes.draw do
 
   scope module: :staff do
     resources :dashboard, only: [:index]
+    resources :tickets, only: [] do
+      resources :replies, only: [:new, :create]
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

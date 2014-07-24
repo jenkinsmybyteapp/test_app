@@ -1,0 +1,3 @@
+$('body').find('.reply-dialog').hide().remove();
+$('body').append("<%= escape_javascript render('reply', ticket: @ticket) %>");
+$('body').find('.reply-dialog').modal('show');
