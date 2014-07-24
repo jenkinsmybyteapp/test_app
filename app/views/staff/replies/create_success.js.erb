@@ -1,0 +1,3 @@
+$('#flash-block').append("<%= escape_javascript render('layouts/shared/messages') %>");
+$('.reply-dialog').modal('hide').remove();
+window.location.href = '<%= dashboard_index_path %>';

@@ -2,6 +2,9 @@ class Status < ActiveRecord::Base
   validates :name, presence: true
   has_one :ticket
 
+  STATUSES = ["Waiting for Staff Response", "Waiting for Customer",
+              "On Hold", "Cancelled", "Completed"]
+
   CLOSED_STATUSES = ['Cancelled', 'Completed']
   OPEN_STATUSES = ['Waiting for Staff Response', 'Waiting for Customer']
   HOLD_STATUSES = ['On Hold']

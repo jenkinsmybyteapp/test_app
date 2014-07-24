@@ -12,6 +12,15 @@
             .body= f.object.body
             - if f.object.screenshot
               .image=link_to image_tag(f.object.screenshot.image.url(:thumb)), f.object.screenshot.image.url(:original)
+            .status.row
+              .col-md-4 Select New Status
+              .col-md-8= select_tag :status, options_for_select(Status::STATUSES), include_blank: true
+            .owner.row
+              .col-md-4 Select Owner
+              .col-md-8= select_tag :staff, options_for_select(staff_list(@staff)), include_blank: true
+            .reply.row
+              .col-md-4= 'Enter your reply'
+              .col-md-8= text_area_tag :staff_reply
       .modal-footer
         button.btn.btn-default type='button' data-dismiss='modal' Cancel
         button.btn.btn-success.modal-form-submit type='button' Send
