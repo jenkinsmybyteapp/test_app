@@ -1,0 +1,20 @@
+.reply-dialog.modal {
+  .modal-body {
+    .ticket-body {
+      .header {
+        font-weight: bold;
+      }
+      .body {
+        padding: 10px;
+        border: 2px dotted gray;
+        margin-bottom: 10px;
+      }
+      .image {
+        border-bottom: 2px solid gray;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        text-align: center;
+      }
+    }
+  }
+}
