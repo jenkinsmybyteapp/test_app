@@ -1,5 +1,4 @@
 ready = ->
-  console.log ('init')
   $('#fileupload').fileupload
     dataType: 'script'
     replaceFileInput: false
