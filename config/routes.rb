@@ -7,6 +7,12 @@ Rails.application.routes.draw do
     resources :tickets, only: [:create, :show]
   end
 
+  namespace :users do
+    resources :tickets, only: [] do
+       resources :replies, only: [:create], namespace: :users
+    end
+  end
+
   scope module: :staff do
     resources :dashboard, only: [:index]
     resources :tickets, only: [] do

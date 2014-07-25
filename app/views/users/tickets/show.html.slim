@@ -1,5 +1,17 @@
 h3 Please, review the ticket
 .row
   .col-md-12
-    .ticket
-      .body= @ticket.body
+    .user-ticket
+      .body
+        = @ticket.body
+      .replies
+        | List of replies
+        ul
+          - @ticket.replies.each do |reply|
+            li.reply= reply.body
+      .add-reply
+        = form_for @ticket, url: users_ticket_replies_path(@ticket), method: :post, remote: true do |f|
+          .reply.row
+            .col-md-2= 'Enter your reply'
+            .col-md-10= text_area_tag :user_reply
+          = f.submit 'Post reply'

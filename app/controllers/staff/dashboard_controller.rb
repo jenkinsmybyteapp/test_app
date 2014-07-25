@@ -1,5 +1,4 @@
-class Staff::DashboardController < ApplicationController
-  before_filter :authenticate_user!
+class Staff::DashboardController < Staff::BaseController
 
   def index
     @open_tickets = Ticket.includes(:department).open

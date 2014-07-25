@@ -1,4 +1,4 @@
-class Staff::RepliesController < ApplicationController
+class Staff::RepliesController < Staff::BaseController
   respond_to :js
   before_filter :find_ticket
 
@@ -14,6 +14,7 @@ class Staff::RepliesController < ApplicationController
     attrs_hash.merge!(user: staff) if staff
     build_staff_reply if params[:staff_reply].present?
     if @ticket.update_attributes(attrs_hash)
+      UserMailer.new_reply(@ticket).deliver
       flash.now[:success] = 'Reply was successfully created'
       render :create_success
     else
