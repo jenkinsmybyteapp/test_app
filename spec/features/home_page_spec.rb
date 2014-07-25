@@ -21,6 +21,7 @@ feature ['Home page'], js: true do
       click_button 'Create Ticket'
       wait_for_ajax
       expect(page).to have_content('Your ticket has been successfully submitted')
+      expect(ActionMailer::Base.deliveries.count).to be_eql(1)
     end
 
     scenario 'with empty body' do
