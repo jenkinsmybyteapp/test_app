@@ -5,6 +5,7 @@ class Ticket < ActiveRecord::Base
   belongs_to :status
   belongs_to :user
   has_many :replies
+  has_many :tracks
 
   validates :body, presence: true
   validates :email, presence: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
