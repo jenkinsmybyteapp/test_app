@@ -12,12 +12,12 @@
             .body= f.object.body
             - if f.object.screenshot
               .image=link_to image_tag(f.object.screenshot.image.url(:thumb)), f.object.screenshot.image.url(:original)
-          - if ticket.replies.any?
-            .replies
-              | List of replies
-              ul
-                - ticket.replies.each do |reply|
-                  li.reply= reply.body
+            - if ticket.replies.any?
+              .replies
+                | List of replies
+                ul
+                  - ticket.replies.each do |reply|
+                    li.reply= reply.body
             .status.row
               .col-md-4 Select New Status
               .col-md-8= select_tag :status, options_for_select(Status::STATUSES), include_blank: true
