@@ -1,0 +1,14 @@
+= form_for :search, url: search_index_path, method: :post, remote: true
+  .row
+    .col-md-4 Search by reference
+    .col-md-8= text_field_tag :search_reference
+  .row
+    .col-md-12 Or
+  .row
+    .col-md-4 Search by words
+    .col-md-8 = text_field_tag :search_word
+  = submit_tag 'Searh'
+.results
+
+
+

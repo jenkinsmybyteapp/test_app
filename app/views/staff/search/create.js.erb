@@ -1,0 +1,2 @@
+$('#flash-block').append("<%= escape_javascript render('layouts/shared/messages') %>");
+$('.results').html("<%= escape_javascript render('staff/dashboard/tickets_list', tickets: @result) %>");

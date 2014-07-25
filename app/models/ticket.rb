@@ -22,6 +22,14 @@ class Ticket < ActiveRecord::Base
     reference
   end
 
+  def self.search(str)
+    return [] if str.blank?
+
+    cond_text   = str.split.map{|w| "body LIKE ? "}.join(" OR ")
+    cond_values = str.split.map{|w| "%#{w}%"}
+    where(str ? [cond_text, *cond_values] : [])
+  end
+
   private
   def generate_reference
     reference = [ random_str('A'..'Z'), random_str('0'..'9'),

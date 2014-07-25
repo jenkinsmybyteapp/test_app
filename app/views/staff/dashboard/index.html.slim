@@ -9,4 +9,4 @@ ul.nav.nav-tabs#tabs role='tablist'
   #open.tab-pane.active= render 'tickets_list', tickets: @open_tickets
   #hold.tab-pane= render 'tickets_list', tickets: @hold_tickets
   #closed.tab-pane= render 'tickets_list', tickets: @closed_tickets
-  #search.tab-pane
+  #search.tab-pane= render 'staff/search/search'

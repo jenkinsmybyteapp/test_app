@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   scope module: :staff do
     resources :dashboard, only: [:index]
+    resources :search, only: [:create]
     resources :tickets, only: [] do
       resources :replies, only: [:new, :create]
     end
