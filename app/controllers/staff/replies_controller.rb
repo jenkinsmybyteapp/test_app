@@ -13,7 +13,7 @@ class Staff::RepliesController < Staff::BaseController
     attrs_hash.merge!(status: status) if status
     attrs_hash.merge!(user: staff) if staff
     build_staff_reply if params[:staff_reply].present?
-    build_track
+    build_track(status, staff)
     if @ticket.update_attributes(attrs_hash)
       UserMailer.new_reply(@ticket).deliver
       flash.now[:success] = 'Reply was successfully created'
@@ -34,9 +34,9 @@ class Staff::RepliesController < Staff::BaseController
     @ticket.replies.build(body: params[:staff_reply], user: current_user)
   end
 
-  def build_track
-    @ticket.tracks.build(status: status,
-                         staff: staff,
+  def build_track(status, staff)
+    @ticket.tracks.build(status: !!status,
+                         staff: !!staff,
                          reply: params[:staff_reply].present?)
   end
 
