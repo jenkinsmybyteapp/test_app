@@ -1,5 +1,4 @@
 class Ticket < ActiveRecord::Base
-  before_validation :add_default_status
   before_create :generate_reference
   has_one :screenshot
   belongs_to :department
@@ -34,9 +33,5 @@ class Ticket < ActiveRecord::Base
     return '' if length < 1 || range.count < length
 
     range.to_a.shuffle[0, length].join()
-  end
-
-  def add_default_status
-    self.status = Status.where(name: DEFAULT_STATUS ).first
   end
 end

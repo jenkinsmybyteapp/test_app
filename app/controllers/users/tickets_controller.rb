@@ -3,6 +3,7 @@ class Users::TicketsController < ApplicationController
 
   def create
     @ticket = Ticket.new(ticket_params)
+    @ticket.status = Status.where(name: DEFAULT_STATUS ).first
     build_screenshot(@ticket)
     if @ticket.save
       UserMailer.new_ticket(@ticket).deliver

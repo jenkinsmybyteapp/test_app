@@ -13,7 +13,6 @@ class Staff::RepliesController < ApplicationController
     attrs_hash.merge!(status: status) if status
     attrs_hash.merge!(user: staff) if staff
     build_staff_reply if params[:staff_reply].present?
-    binding.pry
     if @ticket.update_attributes(attrs_hash)
       flash.now[:success] = 'Reply was successfully created'
       render :create_success
