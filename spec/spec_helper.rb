@@ -15,7 +15,7 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require 'capybara/rspec'
-require 'capybara-webkit'
+#require 'capybara-webkit'
 require 'pry'
 require 'factory_girl'
 require 'factory_girl_rails'
@@ -84,5 +84,5 @@ RSpec.configure do |config|
 =end
   config.profile_examples = 10
   config.order = :random
-  Capybara.javascript_driver = :webkit
+#  Capybara.javascript_driver = :webkit
 end
