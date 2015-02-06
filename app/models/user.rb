@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
   has_many :replies
   # test push event
   # test push event
+  # test push event
 end
