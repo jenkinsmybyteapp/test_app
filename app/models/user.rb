@@ -3,4 +3,5 @@ class User < ActiveRecord::Base
          :rememberable, :trackable, :validatable
   has_many :tickets
   has_many :replies
+  # test push event
 end
