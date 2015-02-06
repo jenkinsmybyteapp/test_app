@@ -4,4 +4,5 @@ class User < ActiveRecord::Base
   has_many :tickets
   has_many :replies
   # test push event
+  # test push event
 end
